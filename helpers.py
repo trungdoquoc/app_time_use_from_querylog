@@ -72,23 +72,6 @@ def extract_data_from_log(json_object: dict) -> dict:
         return querylog
 
 
-def get_insta_and_fb_query_using_rx(querylog_list):
-    """
-    GOAL: filter app from a specific date's querylog_list using the app's regex
-    input: a list of dict.
-    return: a tuple(insta, fb)
-    """
-    fb_and_insta_query = []
-    insta_query = []
-    fb_query = []
-    for log in querylog_list:
-        if fb_and_insta_rx.search(log['website_request']) != None:
-            if insta_rx.search(log['website_request']) != None:
-                insta_query.append(log)
-            else: 
-                fb_query.append(log)
-    return (insta_query, fb_query)
-
 def get_num_rq_by_interval(json_list):
     """
     GOAL: Given a json_list *sorted by day*, return a dict

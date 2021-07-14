@@ -1,6 +1,228 @@
 import helpers
 import re
 
+cur_frontend_response = [
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "zalo"
+                },
+                {
+                    "count": 0,
+                    "name": "fb_and_messenger"
+                },
+                {
+                    "count": 0,
+                    "name": "twitter"
+                },
+                {
+                    "count": 0,
+                    "name": "instagram"
+                },
+                {
+                    "count": 0,
+                    "name": "ok"
+                },
+                {
+                    "count": 0,
+                    "name": "vk"
+                },
+                {
+                    "count": 0,
+                    "name": "reddit"
+                },
+                {
+                    "count": 0,
+                    "name": "tiktok"
+                },
+                {
+                    "count": 0,
+                    "name": "9gag"
+                },
+                {
+                    "count": 0,
+                    "name": "weibo"
+                }
+            ],
+            "count": 0,
+            "name": "social_network"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "epicgames"
+                },
+                {
+                    "count": 0,
+                    "name": "steam"
+                },
+                {
+                    "count": 0,
+                    "name": "origin"
+                },
+                {
+                    "count": 0,
+                    "name": "blizzard"
+                },
+                {
+                    "count": 0,
+                    "name": "leagueoflegends"
+                },
+                {
+                    "count": 0,
+                    "name": "minecraft"
+                }
+            ],
+            "count": 0,
+            "name": "game"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "netflix"
+                },
+                {
+                    "count": 0,
+                    "name": "hulu"
+                },
+                {
+                    "count": 0,
+                    "name": "disneyplus"
+                },
+                {
+                    "count": 0,
+                    "name": "primevideo"
+                },
+                {
+                    "count": 0,
+                    "name": "fptplay"
+                },
+                {
+                    "count": 0,
+                    "name": "galaxyplay"
+                }
+            ],
+            "count": 0,
+            "name": "movie"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "tinder"
+                }
+            ],
+            "count": 0,
+            "name": "dating"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "discord"
+                },
+                {
+                    "count": 0,
+                    "name": "viber"
+                },
+                {
+                    "count": 0,
+                    "name": "wechat"
+                },
+                {
+                    "count": 0,
+                    "name": "snapchat"
+                },
+                {
+                    "count": 0,
+                    "name": "whatsapp"
+                },
+                {
+                    "count": 0,
+                    "name": "telegram"
+                },
+                {
+                    "count": 0,
+                    "name": "skype"
+                }
+            ],
+            "count": 0,
+            "name": "messaging"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "vimeo"
+                },
+                {
+                    "count": 0,
+                    "name": "dailymotion"
+                },
+                {
+                    "count": 0,
+                    "name": "youtube"
+                },
+                {
+                    "count": 0,
+                    "name": "twitch"
+                }
+            ],
+            "count": 0,
+            "name": "video"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "spotify"
+                },
+                {
+                    "count": 0,
+                    "name": "nhaccuatui"
+                },
+                {
+                    "count": 0,
+                    "name": "zingmp3"
+                },
+                {
+                    "count": 0,
+                    "name": "soundcloud"
+                }
+            ],
+            "count": 0,
+            "name": "music"
+        },
+        {
+            "apps": [
+                {
+                    "count": 0,
+                    "name": "ebay"
+                },
+                {
+                    "count": 0,
+                    "name": "amazon"
+                },
+                {
+                    "count": 0,
+                    "name": "tiki"
+                },
+                {
+                    "count": 0,
+                    "name": "lazada"
+                },
+                {
+                    "count": 0,
+                    "name": "shopee"
+                }
+            ],
+            "count": 0,
+            "name": "shopping"
+        }
+    ]
 ### social_network regex:
 ### filter (insta & fb & mess) regex -> filter just instagram -> filter just messenger
 fb_mess_insta_rx = re.compile(r"(instagram|cdninstagram|fb\.com|fb\.me|fbsbx|fbcdn|facebook)")
@@ -34,7 +256,7 @@ fb_and_mess_app = {
     'category': 'social_network', 
     'app_type': 'full_active',
     'regex': fb_mess_insta_rx, 
-    'i': 4,
+    'i': 3,
     'c': 3
 }
 
@@ -58,7 +280,7 @@ tiktok_app = {
 
 netflix_app = {
     'name': 'netflix',
-    'category': 'movies',
+    'category': 'movie',
     'app_type': 'full_active',
     'regex': netflix_rx, 
     'i': 2,
@@ -67,7 +289,7 @@ netflix_app = {
 
 fpt_play_app = {
     'name': 'fpt_play',
-    'category': 'movies',
+    'category': 'movie',
     'app_type': 'full_active',
     'regex': fptp_rx, 
     'i': 4,
@@ -166,20 +388,24 @@ lazada_app = {
 
 category_map_app = {
   'social_network': [fb_and_mess_app, instagram_app, tiktok_app],
-  'movies': [netflix_app, fpt_play_app],
+  'game': [], 
+  'movie': [netflix_app, fpt_play_app],
+  'dating': [], 
   'messaging': [viber_app, zalo_app],
   'video': [youtube_app],
   'music': [spotify_app, zingmp3_app, nhaccuatui_app, soundcloud_app],
   'shopping': [tiki_app, shopee_app, lazada_app]
 }
 
-category_app_mapping = {
-  'social_network': ['fb_and_messenger', 'instagram', 'tiktok'],
-  'movies': ['netflix', 'fpt_play'],
-  'messaging': ['viber', 'zalo'],
-  'video': ['youtube'],
+current_frontend = {
+  'social_network': ['facebook','twitter','instagram','reddit','tiktok','9gag','weibo'],
+  'game': ['epicgames','steam','origin','blizzard','leagueoflegends','minecraft'],
+  'movies': ['netflix','fpt_play','hulu','disneyplus','primevideo','galaxyplay'],
+  'dating': ['tinder'],
+  'messaging': ['zalo','discord','viber','wechat','snapchat','whatsapp','telegram','skype'],
+  'video': ['vimeo','dailymotion','youtube','twitch'],
   'music': ['spotify', 'zingmp3', 'nhaccuatui', 'soundcloud'],
-  'shopping': ['tiki', 'shoppe', 'lazada']
+  'shopping': ['ebay', 'amazaon', 'tiki', 'shoppe', 'lazada']
 }
 
 def get_app_dict_by_name(app_name):
@@ -326,7 +552,7 @@ class Device:
             extracted_log = helpers.extract_data_from_log(log)
             if extracted_log != None:
                 self.insert_log_to_querylog(extracted_log)
-        return 
+        return
 
     def get_app_query_using_rx(self, querylog_list, rx_use):
         """
@@ -339,6 +565,23 @@ class Device:
             if rx_use.search(log['website_request']) != None:
                 app_query.append(log)
         return app_query
+
+    def get_insta_and_fb_query_using_rx(self, querylog_list):
+        """
+        GOAL: filter app from a specific date's querylog_list using the app's regex
+        input: a list of dict.
+        return: a tuple(insta, fb)
+        """
+        fb_and_insta_query = []
+        insta_query = []
+        fb_query = []
+        for log in querylog_list:
+            if fb_mess_insta_rx.search(log['website_request']) != None:
+                if insta_rx.search(log['website_request']) != None:
+                    insta_query.append(log)
+                else: 
+                    fb_query.append(log)
+        return (insta_query, fb_query)
 
     def update_device_time_use(self):
         """
@@ -355,13 +598,19 @@ class Device:
                                         130:['fb_and_messenger', 'instagram'],...}
             """
             interval_all_app = {}
+            insta_query = self.get_insta_and_fb_query_using_rx(self.get_querylog_by_date()[date])[0]
+            fb_mess_query = self.get_insta_and_fb_query_using_rx(self.get_querylog_by_date()[date])[1]
             for cate in category_map_app:
                 for app in category_map_app[cate]:
-                    app_request = self.get_app_query_using_rx(self.get_querylog_by_date()[date], rx_use=app['regex'])
+                    if app['name'] == "instagram":
+                        app_request = insta_query
+                    elif app['name'] == "fb_and_messenger":
+                        app_request = fb_mess_query
+                    else:
+                        app_request = self.get_app_query_using_rx(self.get_querylog_by_date()[date], rx_use=app['regex'])
                     app_interval = helpers.get_num_rq_by_interval(app_request)
                     f_app_interval = dict(sorted(helpers.filter_intensity_by_threshold(app_interval, app['i']).items()))
                     helpers.insert_app_use_to_interval(app['name'], f_app_interval, interval_all_app)
-
             interval_all_app = dict(sorted(interval_all_app.items()))
 
             """
@@ -392,6 +641,68 @@ class Device:
                     t = ratio_app_res[app][itv]
                     if t < 1:
                         app_time = app_time - (1-t)
+
+                device_app_record[app_object['name']] += app_time
+                device_cate_record[app_object['category']] += app_time
+
+        self.get_record().update_app_stats_time(device_app_record)
+        self.get_record().update_category_stats_time(device_cate_record)
+
+        return
+
+    def single_app_update_device_time_use(self):
+        """
+        GOAL: After loaded device's log data, process date-sorted log data -> update into self.record()
+        input: Device object
+        returns: None
+        """
+        device_app_record = create_empty_app_record()
+        device_cate_record = create_empty_cate_record()
+        for date in self.get_querylog_by_date():
+            """
+            1) for a given day, what apps are used during each interval?
+            e.g.: interval_all_app = {129:['fb_and_messenger', 'shopee]
+                                        130:['fb_and_messenger', 'instagram'],...}
+            """
+            interval_all_app = {}
+            insta_query = self.get_insta_and_fb_query_using_rx(self.get_querylog_by_date()[date])[0]
+            fb_mess_query = self.get_insta_and_fb_query_using_rx(self.get_querylog_by_date()[date])[1]
+            for cate in category_map_app:
+                for app in category_map_app[cate]:
+                    if app['name'] == "instagram":
+                        app_request = insta_query
+                    elif app['name'] == "fb_and_messenger":
+                        app_request = fb_mess_query
+                    else:
+                        app_request = self.get_app_query_using_rx(self.get_querylog_by_date()[date], rx_use=app['regex'])
+                    app_interval = helpers.get_num_rq_by_interval(app_request)
+                    f_app_interval = dict(sorted(helpers.filter_intensity_by_threshold(app_interval, app['i']).items()))
+                    helpers.insert_app_use_to_interval(app['name'], f_app_interval, interval_all_app)
+            interval_all_app = dict(sorted(interval_all_app.items()))
+
+            """
+            2) for each app, what is the use ratio of the app in each interval? 
+            e.g.: ratio_app_res = {'instagram': {130: 0.5, 131: 1.0, 132: 0.33}, 
+                                        "shopee': {129: 0.5},...}
+            """
+            ratio_app_res = {}
+            for cate in category_map_app:
+                for app in category_map_app[cate]:
+                    ratio_app_res[app['name']] = {}
+
+            for app in ratio_app_res:
+                for interval in interval_all_app:
+                    if app in interval_all_app[interval]:
+                        val = 1/(len(interval_all_app[interval]))
+                        ratio_app_res[app][interval] = val
+
+            """
+            3) for each app, calculate actual time use (in regards of maybe multiple apps are used in one interval)
+            e.g.: 
+            """
+            for app in ratio_app_res:
+                app_object = get_app_dict_by_name(app)
+                app_time = helpers.get_app_use_time(ratio_app_res[app], ctn_threshold=app_object['c'])
 
                 device_app_record[app_object['name']] += app_time
                 device_cate_record[app_object['category']] += app_time
@@ -450,6 +761,12 @@ class Record:
     def get_app_stats_time(self):
         return self.app_stats_time
 
+    def get_one_app_time(self, app_name):
+        return self.app_stats_time[app_name]
+
+    def get_one_category_time(self, cate_name):
+        return self.category_stats_time[cate_name]
+
     def set_one_category_percent(self, that_category, value):
         self.category_stats_percent[that_category] = value
         return 
@@ -484,6 +801,21 @@ class Record:
             self.app_stats_time[k] += from_dict[k]
         return
 
+    def get_formatted_category_stats_time(self):
+        og_cate_stats = self.category_stats_time()
+        new_formatted_response = cur_frontend_response
+        # for app in og_cate_stats:
+            
+        return
+
+    def get_formatted_app_stats_time(self):
+        og_app_stats = self.get_app_stats_time()
+        new_formatted_response = cur_frontend_response
+        for i in new_formatted_response:
+            for j in i['apps']:
+                if j['name'] in og_app_stats:
+                    j['count'] = og_app_stats[j['name']]
+        return new_formatted_response
 
 # if __name__ == "__main__":
 #     t_record = Device("tdq")

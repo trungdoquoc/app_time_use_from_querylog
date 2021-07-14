@@ -1,0 +1,26 @@
+^.*(icloud|vnexpress|yahoo|vnecdn|nextdns|apple|stackoverflow|adguard|tinhte).*\n
+
+#SOCIAL_NETWORK APPs regex:
+fb_mess_insta regex: ^.*("QH":).*(instagram|cdninstagram|fb\.com|fb\.me|fbsbx|fbcdn|facebook).*\n
+insta regex: ^.*("QH":).*(instagram|cdninstagram).*\n
+
+# MESSAGING APPs regex:
+zalo regex: ^.*("QH":).*(zalo|zdn\.vn|zadn\.vn|zaloapp\.).*\n
+
+#MOVIES APPs regex:
+netflix regex: ^.*("QH":).*(netflix|nflxext\.|nflximg\.|nflxso\.|nflxvideo\.).*\n
+fptplay regex: ^.*("QH":).*(fptplay).*\n
+
+# VIDEO APPs regex:
+youtube regex: ^.*("QH":).*(youtube|ytimg|youtu\.be|googlevideo\.com|youtube-nocookie).*\n
+
+# MUSIC APPs regex:
+soundcloud regex: ^.*("QH":).*(wave\.sndcdn|soundcloud).*\n
+spotify regex: ^.*("QH":).*(spotify)|(scdn\.co).*\n
+zingmp3 regex: ^.*("QH":).*(zingmp3|zplayer-trk\.zdn|zmp3\.zadn|zplayer-trk\.zdn|zmp3-static\.zadn).*\n
+nhaccuatui regex: ^.*("QH":).*(nixcdn|nhaccuatui).*\n
+
+#SHOPPING APPs regex:
+tiki regex: ^.*("QH":).*(tiki|tikicdn).*\n
+shopee regex: ^.*("QH":).*(shopee|asia\.creativecdn).*\n
+lazada regex; ^.*("QH":).*(lazada|alicdn\.com).*\n

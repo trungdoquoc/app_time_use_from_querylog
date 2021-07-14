@@ -1,0 +1,22 @@
+file_name,date_record,real_time_spent,note_for_data,app_use
+yt_own_data_1,June 7,26,Short music videos ,youtube
+yt_own_data_2,June 9,44,Video streaming,youtube
+yt_own_data_3,June 7,26,"Long music videos 
+(No pause)",youtube
+sc_own_data_1,June 3,35,,soundcloud
+spotify_own_data_1,June 8,21,,spotify
+spotify_own_data_2,June 10,32,,spotify
+zingmp3_own_data_1,June 4,28,,zingmp3
+zingmp3_own_data_2,June 4,15,,zingmp3
+nct_own_data_1,June 7,30,,nhaccuatui
+tiki_own_data_1,June 10,9,,tiki
+shopee_own_data_1,June 20,11,,shopee
+lazada_own_data_1,June 20,7,,lazada
+zalo_own_data_1,June 3,9,"If send and no respond -> no request If open unopened chat -> request",zalo
+zalo_own_data_2,June 10,14,Call and texting ,zalo
+messenger_own_data_1,June 20,7,Send message on Facebook web,fb_and_messenger
+messenger_own_data_2,June 20,7,Using desktop app,fb_and_messenger
+netflix_own_data_1,June 2,62,,netflix
+netflix_own_data_2,June 13,22,"Open, then pause",netflix
+fptplay_own_data_1,June 10,61,,fpt_play
+fb_own_data_1,June 13,12,,fb_and_messenger
