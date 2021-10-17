@@ -25,6 +25,3 @@ def get_group_time_use(group_id: str):
 #     else:
 #         return {"logs": None}
 
-@app.get("/foo/{var}")
-def bar(var: int):
-    return {'hello':var}
