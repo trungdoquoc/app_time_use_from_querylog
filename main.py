@@ -18,10 +18,4 @@ def get_group_time_use(group_id: str):
     group_app_use = new_group.get_group_record().get_formatted_app_stats_time()
     return {"group_category_use": group_cate_use, "group_app_use": group_app_use}
 
-# @app.get("/logs")
-# def tell_(limit, allowed: bool):
-#     if allowed:
-#         return {"logs": f'{limit} of logs'}
-#     else:
-#         return {"logs": None}
 
